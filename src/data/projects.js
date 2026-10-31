@@ -49,6 +49,7 @@ export const projects = [
     "/projects/taskflow/home.png",
   ],
   repo: "https://github.com/Alegomes2/taskflow",
+  demo: "https://taskflow-gules-phi.vercel.app/"
 },
 {
   id: "crypto",
@@ -63,6 +64,7 @@ export const projects = [
     "/projects/crypto-dashboard/crypto-dashboard.png",
   ],
   repo: "https://github.com/Alegomes2/crypto-dashboard",
+  demo: "crypto-dashboard-seven-jet.vercel.app",
 },
 
   {
