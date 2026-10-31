@@ -64,7 +64,7 @@ export const projects = [
     "/projects/crypto-dashboard/crypto-dashboard.png",
   ],
   repo: "https://github.com/Alegomes2/crypto-dashboard",
-  demo: "crypto-dashboard-seven-jet.vercel.app",
+  demo: "https://crypto-dashboard-seven-jet.vercel.app",
 },
 
   {
