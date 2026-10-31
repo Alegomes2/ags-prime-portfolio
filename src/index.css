@@ -1,0 +1,281 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   CONFIGURAÇÕES GLOBAIS
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #050914;
+  font-family: "Courier New", monospace;
+}
+
+/* ========================================
+   AURORA TECH - BACKGROUND
+======================================== */
+
+.interactive-background {
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    #102b46 0%,
+    #080f1d 50%,
+    #050914 100%
+  );
+}
+
+/* ========================================
+   AURORAS ANIMADAS
+======================================== */
+
+.aurora {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+  filter: blur(45px);
+  opacity: 0.85;
+
+  will-change: transform;
+}
+
+/* AURORA CIANO */
+
+.aurora-one {
+  top: 5%;
+  left: 5%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(0, 245, 255, 0.65) 0%,
+    rgba(0, 145, 255, 0.35) 35%,
+    transparent 70%
+  );
+
+  animation: auroraOneMove 8s ease-in-out infinite alternate;
+}
+
+/* AURORA AZUL */
+
+.aurora-two {
+  right: 5%;
+  bottom: 5%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(45, 100, 255, 0.65) 0%,
+    rgba(0, 190, 255, 0.3) 40%,
+    transparent 70%
+  );
+
+  animation: auroraTwoMove 10s ease-in-out infinite alternate;
+}
+
+/* MOVIMENTO DA AURORA CIANO */
+
+@keyframes auroraOneMove {
+  0% {
+    transform: translate3d(-15%, -10%, 0) scale(0.85);
+  }
+
+  50% {
+    transform: translate3d(35%, 20%, 0) scale(1.2);
+  }
+
+  100% {
+    transform: translate3d(65%, -5%, 0) scale(0.95);
+  }
+}
+
+/* MOVIMENTO DA AURORA AZUL */
+
+@keyframes auroraTwoMove {
+  0% {
+    transform: translate3d(15%, 10%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-35%, -25%, 0) scale(1.25);
+  }
+
+  100% {
+    transform: translate3d(-65%, 10%, 0) scale(0.9);
+  }
+}
+
+/* ========================================
+   BRILHO INTERATIVO DO MOUSE
+======================================== */
+
+.mouse-glow {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    350px circle at var(--mouse-x) var(--mouse-y),
+    rgba(0, 230, 255, 0.25),
+    rgba(59, 130, 246, 0.1) 45%,
+    transparent 75%
+  );
+}
+
+/* ========================================
+   GRID DESATIVADO
+======================================== */
+
+.background-grid {
+  display: none;
+}
+
+/* ========================================
+   MARQUEE - TECNOLOGIAS
+======================================== */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+
+  animation: scrollTech 20s linear infinite;
+}
+
+@keyframes scrollTech {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================
+   TÍTULOS DAS SEÇÕES
+======================================== */
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  background: linear-gradient(
+    90deg,
+    #22d3ee,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* ========================================
+   CURSOR DO TERMINAL
+======================================== */
+
+.cursor {
+  display: inline-block;
+
+  width: 8px;
+  height: 16px;
+
+  background: #22c55e;
+  margin-left: 4px;
+
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+  .aurora {
+    width: 100vw;
+    height: 100vw;
+
+    min-width: 350px;
+    min-height: 350px;
+
+    filter: blur(55px);
+    opacity: 0.65;
+  }
+
+  .mouse-glow {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .aurora,
+  .marquee-track,
+  .cursor {
+    animation: none;
+  }
+
+  .mouse-glow {
+    display: none;
+  }
+}
+
