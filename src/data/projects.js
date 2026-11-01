@@ -29,11 +29,11 @@ export const projects = [
   description:
     "Interface de gestão empresarial com cadastro de clientes e agenda, desenvolvida com React e TypeScript.",
   tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Zod"],
-  image: "/projects/flowai/flowai-dashboard.png",
+  image: "/projects/flowai/flowia-dashboard.png",
   images: [
-    "/projects/flowai/flowai-dashboard.png",
-    "/projects/flowai/clientes.png",
-    "/projects/flowai/agenda.png",
+    "/projects/flowai/flowia-dashboard.png",
+    "/projects/flowai/flowia-clientes.png",
+    "/projects/flowai/flowia-agenda.png",
   ],
 },
 {
@@ -47,6 +47,8 @@ export const projects = [
   image: "/projects/taskflow/home.png",
   images: [
     "/projects/taskflow/home.png",
+    
+    
   ],
   repo: "https://github.com/Alegomes2/taskflow",
   demo: "https://taskflow-gules-phi.vercel.app/"
